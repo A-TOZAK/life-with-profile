@@ -14,20 +14,20 @@
     }
 
     :root {
-      --ink: #17201d;
-      --muted: #5f6f6b;
-      --line: rgba(23, 32, 29, .12);
-      --green: #236d5a;
-      --teal: #137a7f;
-      --blue: #2f5f9f;
-      --gold: #c98a24;
+      --ink: #18312d;
+      --muted: #647874;
+      --line: rgba(24, 49, 45, .12);
+      --green: #1f8a70;
+      --teal: #2aa8a0;
+      --blue: #3d77c4;
+      --gold: #e4a93a;
       --red: #b94a48;
-      --bg: #f6f8fb;
+      --bg: #fbfaf5;
       --paper: #ffffff;
-      --soft: #eef7f4;
-      --soft-blue: #eef4fb;
-      --soft-gold: #fff7ea;
-      --shadow: 0 18px 50px rgba(23, 32, 29, .09);
+      --soft: #e8f7f1;
+      --soft-blue: #eef7ff;
+      --soft-gold: #fff6df;
+      --shadow: 0 18px 46px rgba(31, 138, 112, .11);
       --radius: 8px;
       --max: 1120px;
     }
@@ -112,18 +112,18 @@
       padding: 8px 12px;
       border-radius: 999px;
       color: #fff;
-      background: var(--green);
+      background: linear-gradient(135deg, var(--green), var(--teal));
     }
 
     .hero {
       position: relative;
       isolation: isolate;
-      min-height: 78vh;
-      padding: 74px 22px 40px;
+      min-height: 76vh;
+      padding: 72px 22px 36px;
       display: flex;
       align-items: center;
       overflow: hidden;
-      background: #17201d;
+      background: #f8f3e7;
     }
 
     .hero::before {
@@ -132,7 +132,7 @@
       inset: 0;
       z-index: -2;
       background: url("assets/hero-workshop.png") center / cover no-repeat;
-      filter: saturate(.94) contrast(1.03);
+      filter: saturate(1.04) contrast(.98) brightness(1.08);
       transform: scale(1.02);
     }
 
@@ -142,14 +142,14 @@
       inset: 0;
       z-index: -1;
       background:
-        linear-gradient(90deg, rgba(11, 18, 16, .91) 0%, rgba(11, 18, 16, .72) 46%, rgba(11, 18, 16, .28) 100%),
-        linear-gradient(0deg, rgba(11, 18, 16, .68) 0%, rgba(11, 18, 16, .12) 42%, rgba(11, 18, 16, .18) 100%);
+        linear-gradient(90deg, rgba(255, 252, 242, .96) 0%, rgba(255, 252, 242, .88) 46%, rgba(255, 252, 242, .40) 100%),
+        linear-gradient(0deg, rgba(255, 255, 255, .84) 0%, rgba(255, 255, 255, .34) 42%, rgba(255, 247, 224, .28) 100%);
     }
 
     .hero-inner {
       width: min(100%, var(--max));
       margin: 0 auto;
-      color: #fff;
+      color: var(--ink);
     }
 
     .eyebrow {
@@ -157,10 +157,10 @@
       align-items: center;
       gap: 8px;
       padding: 5px 12px;
-      border: 1px solid rgba(255, 255, 255, .24);
+      border: 1px solid rgba(31, 138, 112, .18);
       border-radius: 999px;
-      background: rgba(255, 255, 255, .12);
-      color: #d8fff1;
+      background: rgba(255, 255, 255, .76);
+      color: var(--green);
       font-size: .76rem;
       font-weight: 800;
       margin-bottom: 18px;
@@ -184,7 +184,7 @@
     .hero-copy {
       margin: 22px 0 0;
       max-width: 720px;
-      color: rgba(255, 255, 255, .86);
+      color: #3e514d;
       font-size: clamp(1rem, 1.7vw, 1.16rem);
       line-height: 2;
       font-weight: 500;
@@ -218,10 +218,10 @@
     }
 
     .button.light {
-      color: #fff;
-      background: rgba(255, 255, 255, .11);
-      border-color: rgba(255, 255, 255, .22);
-      box-shadow: none;
+      color: var(--green);
+      background: rgba(255, 255, 255, .78);
+      border-color: rgba(31, 138, 112, .22);
+      box-shadow: 0 8px 22px rgba(31, 138, 112, .08);
       backdrop-filter: blur(12px);
     }
 
@@ -232,27 +232,28 @@
       width: min(100%, 780px);
       margin-top: 38px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, .16);
+      border: 1px solid rgba(31, 138, 112, .14);
       border-radius: 10px;
-      background: rgba(255, 255, 255, .14);
+      background: rgba(255, 255, 255, .76);
       backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
     }
 
     .hero-proof div {
       padding: 14px 16px;
-      background: rgba(255, 255, 255, .08);
+      background: rgba(255, 255, 255, .62);
     }
 
     .hero-proof strong {
       display: block;
-      color: #fff;
+      color: var(--green);
       font-size: 1.35rem;
       line-height: 1.1;
     }
 
     .hero-proof span {
       display: block;
-      color: rgba(255, 255, 255, .72);
+      color: var(--muted);
       font-size: .74rem;
       margin-top: 4px;
       line-height: 1.45;
@@ -272,12 +273,63 @@
       min-height: 38px;
       padding: 8px 12px;
       border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, .22);
-      color: rgba(255, 255, 255, .9);
-      background: rgba(255, 255, 255, .09);
+      border: 1px solid rgba(31, 138, 112, .18);
+      color: var(--green);
+      background: rgba(255, 255, 255, .72);
       font-size: .8rem;
       font-weight: 800;
       backdrop-filter: blur(12px);
+    }
+
+    .about-frame {
+      display: grid;
+      grid-template-columns: minmax(250px, .72fr) minmax(0, 1.28fr);
+      gap: 34px;
+      padding: 32px;
+      border: 1px solid rgba(31, 138, 112, .18);
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(232, 247, 241, .96), rgba(255, 255, 255, .97) 56%, rgba(255, 246, 223, .88));
+      box-shadow: var(--shadow);
+    }
+
+    .about-kicker {
+      color: var(--green);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .about-name {
+      margin: 0;
+      font-size: clamp(2.05rem, 4vw, 3.2rem);
+      font-weight: 900;
+      line-height: 1.1;
+    }
+
+    .about-role {
+      margin-top: 14px;
+      color: var(--muted);
+      font-weight: 700;
+      line-height: 1.8;
+    }
+
+    .about-copy {
+      margin: 0;
+      color: #344b46;
+      font-size: 1rem;
+      line-height: 2;
+    }
+
+    .about-copy + .about-copy {
+      margin-top: 12px;
+    }
+
+    .about-frame .stats {
+      grid-column: 1 / -1;
+      margin-top: 0;
     }
 
     main {
@@ -401,27 +453,6 @@
       background: var(--green);
     }
 
-    .profile-block {
-      display: grid;
-      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .profile-name {
-      font-size: 2rem;
-      font-weight: 900;
-      line-height: 1.2;
-      margin-bottom: 8px;
-    }
-
-    .profile-role {
-      color: var(--muted);
-      font-weight: 700;
-      font-size: .92rem;
-      line-height: 1.6;
-    }
-
     .stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -455,7 +486,7 @@
     }
 
     .intro-box {
-      background: #17201d;
+      background: linear-gradient(135deg, #1f8a70, #246e8c);
       color: #fff;
       border-radius: var(--radius);
       padding: 28px;
@@ -543,8 +574,9 @@
     }
 
     .cta-section {
-      background: #17201d;
-      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(232, 247, 241, .98), rgba(255, 246, 223, .92));
+      color: var(--ink);
       padding: 70px 22px;
     }
 
@@ -558,18 +590,18 @@
     }
 
     .cta-panel h2 {
-      color: #fff;
+      color: var(--ink);
     }
 
     .cta-panel p {
-      color: rgba(255, 255, 255, .76);
+      color: var(--muted);
       margin: 14px 0 0;
       max-width: 640px;
     }
 
     .contact-card {
-      background: rgba(255, 255, 255, .08);
-      border: 1px solid rgba(255, 255, 255, .14);
+      background: rgba(255, 255, 255, .76);
+      border: 1px solid rgba(31, 138, 112, .16);
       border-radius: var(--radius);
       padding: 22px;
     }
@@ -582,7 +614,7 @@
 
     .contact-card span {
       display: block;
-      color: rgba(255, 255, 255, .72);
+      color: var(--muted);
       font-size: .88rem;
     }
 
@@ -597,7 +629,7 @@
 
     @media (max-width: 900px) {
       .section-head,
-      .profile-block,
+      .about-frame,
       .cta-panel {
         grid-template-columns: 1fr;
       }
@@ -622,8 +654,8 @@
 
       .hero::after {
         background:
-          linear-gradient(90deg, rgba(11, 18, 16, .92) 0%, rgba(11, 18, 16, .72) 100%),
-          linear-gradient(0deg, rgba(11, 18, 16, .68) 0%, rgba(11, 18, 16, .14) 100%);
+          linear-gradient(90deg, rgba(255, 252, 242, .96) 0%, rgba(255, 252, 242, .84) 100%),
+          linear-gradient(0deg, rgba(255, 255, 255, .84) 0%, rgba(255, 247, 224, .28) 100%);
       }
 
       .hero-proof {
@@ -654,6 +686,10 @@
         grid-template-columns: 1fr;
       }
 
+      .about-frame {
+        padding: 24px 20px;
+      }
+
       .hero-proof {
         grid-template-columns: 1fr;
       }
@@ -668,7 +704,7 @@
         <span>教育DX・生成AI・学校教育プログラム実装</span>
       </a>
       <div class="nav-links">
-        <a href="#profile">プロフィール</a>
+        <a href="#about">About</a>
         <a href="#work">できること</a>
         <a href="#referral">紹介してほしい方</a>
         <a class="nav-cta" href="https://lin.ee/Tay8XPQ">公式LINE</a>
@@ -718,14 +754,25 @@
       </div>
     </div>
 
-    <section class="band-white" id="profile">
-      <div class="inner profile-block">
-        <div class="card accent-green">
-          <div class="label">Profile</div>
-          <div class="profile-name">外崎 顕博</div>
-          <div class="profile-role">
-            福岡県飯塚市 小学校教員 / GEG Chikuho共同リーダー<br>
-            LiFE with 代表予定 / 2027年3月独立予定
+    <section class="band-white" id="about">
+      <div class="inner">
+        <div class="about-frame">
+          <div>
+            <div class="about-kicker">About</div>
+            <h2 class="about-name">外崎 顕博</h2>
+            <div class="about-role">
+              福岡県飯塚市 小学校教員<br>
+              GEG Chikuho 共同リーダー<br>
+              LiFE with 代表予定 / 2027年3月独立予定
+            </div>
+          </div>
+          <div>
+            <p class="about-copy">
+              学校現場でGoogle・生成AI・校務DX・授業DXを試しながら、先生が「明日からやってみよう」と思える形に翻訳しています。
+            </p>
+            <p class="about-copy">
+              企業向けには、学校向け教材・出前授業・教育CSRを、子どもと先生に届く授業へ磨くレビューや模擬授業フィードバックを行います。
+            </p>
           </div>
           <div class="stats">
             <div class="stat">
@@ -744,17 +791,6 @@
               <strong>4本</strong>
               <span>共同執筆論文</span>
             </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="label">What I Do</div>
-          <h2>現場の先生が動けるところまで、教育DXを翻訳する。</h2>
-          <p class="lead" style="margin-top:14px;">
-            生成AIやGoogleツールは、導入しただけでは使われ続けません。大切なのは、先生の仕事、授業の流れ、子どもの反応、管理職の判断、学校の文化に合わせて組み立てることです。LiFE with は、ツール紹介ではなく、学校で使われる仕組みにする伴走を核にしています。
-          </p>
-          <div class="pill-row" style="margin-top:18px;">
-            <a class="button" href="https://note.com/tozaki_edu">noteで実践記事を見る</a>
-            <a class="button" href="https://edtech-chikuho.com/">教材・実践サイトを見る</a>
           </div>
         </div>
       </div>
@@ -990,7 +1026,7 @@
     <section class="cta-section" id="contact">
       <div class="cta-panel">
         <div>
-          <div class="label" style="color:#a7f3d0;">Contact</div>
+          <div class="label">Contact</div>
           <h2>学校向けの授業・教材・研修を、現場目線で見直したい方へ。</h2>
           <p>
             初回のご相談は公式LINEからお願いします。現在は2027年3月独立に向けた準備段階のため、勤務規程や時期に配慮しながら、可能な範囲で相談・情報交換を行います。
