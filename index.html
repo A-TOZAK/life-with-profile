@@ -686,6 +686,40 @@
       line-height: 1.75;
     }
 
+    .lesson-tags {
+      grid-column: 1 / -1;
+      padding: 22px;
+      border: 1px solid rgba(61, 119, 196, .14);
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(238, 247, 255, .9), rgba(255, 255, 255, .94));
+    }
+
+    .lesson-tags strong {
+      display: block;
+      color: var(--blue);
+      font-size: .9rem;
+      margin-bottom: 12px;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+    }
+
+    .tag-row span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid rgba(61, 119, 196, .14);
+      color: #31536a;
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
     .cta-section {
       background:
         linear-gradient(135deg, rgba(232, 247, 241, .98), rgba(255, 246, 223, .92));
@@ -836,11 +870,11 @@
       <div class="hero-inner">
         <div class="eyebrow">BNI紹介用 / 教育DX・出前授業レビュー</div>
         <h1>
-          <span class="h1-line">企業の想いを、</span>
-          <span class="h1-line">子どもに届くカタチに。</span>
+          <span class="h1-line">企業の思いを、</span>
+          <span class="h1-line">学校で使われる授業に。</span>
         </h1>
         <p class="hero-copy">
-          小学校教員の外﨑顯博です。企業の出前授業や資料を、学校現場の文脈からブラッシュアップします。
+          現役小学校教員の外﨑顯博です。地域や仕事を授業にしてきた経験をもとに、企業の出前授業や教材を、子どもと先生に届く形へ磨きます。
         </p>
         <div class="hero-actions">
           <a class="button primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc0oCAQKy3siyECsM4QEPsQpWyruk4r0BfXe31oP8Ifvq10-w/viewform">PCの方はこちら（問い合わせフォーム）</a>
@@ -923,7 +957,7 @@
             <h2>できること</h2>
           </div>
           <p class="lead">
-            研修だけで終わらせず、学校で使われるところまで一緒に整えます。
+            地域や企業の価値を、先生が扱いやすく、子どもが考えたくなる授業に整えます。
           </p>
         </div>
 
@@ -935,9 +969,9 @@
             </p>
           </article>
           <article class="card accent-blue">
-            <h3>企業向け<br>学校で使われる教材づくり</h3>
+            <h3>企業向け<br>出前授業・教材づくり</h3>
             <p>
-              教材、スライド、ワークシート、出前授業を現役教員の目で見直します。子どもに伝わるか、先生が扱いやすいかを具体的に返します。
+              教材、スライド、ワークシート、出前授業を現役教員の目で見直します。教室と別の学校・地域・企業をオンラインでつなぐ授業の調整や、指導案づくりも行います。
             </p>
           </article>
           <article class="card accent-gold">
@@ -1121,6 +1155,9 @@
               企業の出前授業や教材にも、同じことが起きます。思いはよくても、45分の授業として扱いづらい。先生が準備に時間をかけられない。子どもの問いになりきらない。そうしたズレを、現役教員の目線で見直し、学校で使いやすい授業へ整えることが私の役割です。
             </p>
             <p>
+              これまでにも、飯塚市役所、本町商店街、いちご農家、米農家、アナウンサー、大手小売店など、地域や仕事を授業の題材として扱ってきました。教室と別の学校・地域・企業をオンラインでつないで授業を行うこともあり、相手先との調整、子どもに届く問いの設計、指導案づくりまで行ってきました。
+            </p>
+            <p>
               研究・発表・執筆歴は <a class="link-muted" href="https://researchmap.jp/AkihiroTOZAKI">researchmap</a> に整理しています。ここでは、紹介先の方に伝わりやすい形で要点だけを載せています。
             </p>
           </div>
@@ -1135,7 +1172,18 @@
             </div>
             <div class="story-item">
               <strong>学校に届く形へ整える</strong>
-              <span>教材、問い、ワークシート、流れ、振り返りまで授業として見直します。</span>
+              <span>教材、問い、ワークシート、流れ、振り返り、オンライン接続まで、授業として成立する形へ見直します。</span>
+            </div>
+            <div class="lesson-tags">
+              <strong>これまで授業で扱ってきた地域・仕事</strong>
+              <div class="tag-row">
+                <span>飯塚市役所</span>
+                <span>飯塚市本町商店街</span>
+                <span>いちご農家</span>
+                <span>米農家</span>
+                <span>アナウンサー</span>
+                <span>大手小売店</span>
+              </div>
             </div>
           </div>
         </div>
