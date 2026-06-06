@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="外崎顕博 / LiFE with。学校・自治体・企業の思いを、教室で使われる学びに変える教育実装パートナー。">
   <title>外崎顕博 | LiFE with</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -26,6 +29,7 @@
       --soft-gold: #fff7ea;
       --shadow: 0 18px 50px rgba(23, 32, 29, .09);
       --radius: 8px;
+      --max: 1120px;
     }
 
     html {
@@ -34,11 +38,14 @@
 
     body {
       margin: 0;
-      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Noto Sans JP", sans-serif;
+      font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", system-ui, sans-serif;
       background: var(--bg);
       color: var(--ink);
       line-height: 1.75;
       letter-spacing: 0;
+      font-weight: 500;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
     }
 
     a {
@@ -61,7 +68,7 @@
     }
 
     .nav {
-      max-width: 1120px;
+      max-width: var(--max);
       margin: 0 auto;
       padding: 14px 22px;
       display: flex;
@@ -109,13 +116,40 @@
     }
 
     .hero {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 68px 22px 44px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr);
-      gap: 42px;
+      position: relative;
+      isolation: isolate;
+      min-height: 78vh;
+      padding: 74px 22px 40px;
+      display: flex;
       align-items: center;
+      overflow: hidden;
+      background: #17201d;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background: url("assets/hero-workshop.png") center / cover no-repeat;
+      filter: saturate(.94) contrast(1.03);
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        linear-gradient(90deg, rgba(11, 18, 16, .91) 0%, rgba(11, 18, 16, .72) 46%, rgba(11, 18, 16, .28) 100%),
+        linear-gradient(0deg, rgba(11, 18, 16, .68) 0%, rgba(11, 18, 16, .12) 42%, rgba(11, 18, 16, .18) 100%);
+    }
+
+    .hero-inner {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      color: #fff;
     }
 
     .eyebrow {
@@ -123,28 +157,37 @@
       align-items: center;
       gap: 8px;
       padding: 5px 12px;
-      border: 1px solid rgba(35, 109, 90, .2);
+      border: 1px solid rgba(255, 255, 255, .24);
       border-radius: 999px;
-      background: var(--soft);
-      color: var(--green);
+      background: rgba(255, 255, 255, .12);
+      color: #d8fff1;
       font-size: .76rem;
       font-weight: 800;
       margin-bottom: 18px;
+      backdrop-filter: blur(10px);
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.35rem, 5vw, 4.4rem);
-      line-height: 1.08;
+      max-width: 760px;
+      font-size: clamp(2.25rem, 5.6vw, 5rem);
+      line-height: 1.14;
       letter-spacing: 0;
+      font-weight: 900;
+      text-wrap: balance;
+    }
+
+    .h1-line {
+      display: block;
     }
 
     .hero-copy {
-      margin: 20px 0 0;
-      max-width: 640px;
-      color: #34423e;
+      margin: 22px 0 0;
+      max-width: 720px;
+      color: rgba(255, 255, 255, .86);
       font-size: clamp(1rem, 1.7vw, 1.16rem);
-      line-height: 1.95;
+      line-height: 2;
+      font-weight: 500;
     }
 
     .hero-actions {
@@ -174,44 +217,67 @@
       border-color: transparent;
     }
 
-    .hero-visual {
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255, 255, 255, .8);
-      background: var(--paper);
+    .button.light {
+      color: #fff;
+      background: rgba(255, 255, 255, .11);
+      border-color: rgba(255, 255, 255, .22);
+      box-shadow: none;
+      backdrop-filter: blur(12px);
     }
 
-    .hero-visual img {
-      width: 100%;
-      aspect-ratio: 16 / 11;
-      object-fit: cover;
-    }
-
-    .visual-caption {
+    .hero-proof {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(4, minmax(128px, 1fr));
       gap: 1px;
-      background: var(--line);
+      width: min(100%, 780px);
+      margin-top: 38px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .14);
+      backdrop-filter: blur(16px);
     }
 
-    .visual-caption div {
-      background: var(--paper);
+    .hero-proof div {
       padding: 14px 16px;
+      background: rgba(255, 255, 255, .08);
     }
 
-    .visual-caption strong {
+    .hero-proof strong {
       display: block;
-      font-size: 1.15rem;
+      color: #fff;
+      font-size: 1.35rem;
       line-height: 1.1;
     }
 
-    .visual-caption span {
+    .hero-proof span {
       display: block;
-      color: var(--muted);
+      color: rgba(255, 255, 255, .72);
       font-size: .74rem;
       margin-top: 4px;
       line-height: 1.45;
+      font-weight: 700;
+    }
+
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .social-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .22);
+      color: rgba(255, 255, 255, .9);
+      background: rgba(255, 255, 255, .09);
+      font-size: .8rem;
+      font-weight: 800;
+      backdrop-filter: blur(12px);
     }
 
     main {
@@ -229,7 +295,7 @@
     }
 
     .inner {
-      max-width: 1120px;
+      max-width: var(--max);
       margin: 0 auto;
     }
 
@@ -483,7 +549,7 @@
     }
 
     .cta-panel {
-      max-width: 1120px;
+      max-width: var(--max);
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1fr .8fr;
@@ -530,7 +596,6 @@
     }
 
     @media (max-width: 900px) {
-      .hero,
       .section-head,
       .profile-block,
       .cta-panel {
@@ -550,11 +615,26 @@
       .nav-links {
         display: none;
       }
+
+      .hero {
+        min-height: 74vh;
+      }
+
+      .hero::after {
+        background:
+          linear-gradient(90deg, rgba(11, 18, 16, .92) 0%, rgba(11, 18, 16, .72) 100%),
+          linear-gradient(0deg, rgba(11, 18, 16, .68) 0%, rgba(11, 18, 16, .14) 100%);
+      }
+
+      .hero-proof {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     @media (max-width: 560px) {
       .hero {
-        padding-top: 42px;
+        min-height: 82vh;
+        padding: 48px 18px 32px;
       }
 
       section {
@@ -565,16 +645,16 @@
         padding-inline: 16px;
       }
 
-      .visual-caption {
-        grid-template-columns: 1fr;
-      }
-
       .timeline-item {
         grid-template-columns: 1fr;
         gap: 4px;
       }
 
       .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-proof {
         grid-template-columns: 1fr;
       }
     }
@@ -591,34 +671,48 @@
         <a href="#profile">プロフィール</a>
         <a href="#work">できること</a>
         <a href="#referral">紹介してほしい方</a>
-        <a class="nav-cta" href="#contact">紹介相談</a>
+        <a class="nav-cta" href="https://lin.ee/Tay8XPQ">公式LINE</a>
       </div>
     </nav>
   </header>
 
   <main>
     <div class="hero">
-      <div>
-        <div class="eyebrow">BNI紹介用プロフィール</div>
-        <h1>学校・自治体・企業の思いを、教室で使われる学びに変える。</h1>
+      <div class="hero-inner">
+        <div class="eyebrow">BNI紹介用 / 教育DX・学校教育プログラム実装</div>
+        <h1>
+          <span class="h1-line">企業の思いを、</span>
+          <span class="h1-line">学校で使われる授業に。</span>
+        </h1>
         <p class="hero-copy">
-          外崎顕博は、福岡県筑豊地区の現役小学校教員であり、GEG Chikuho共同リーダーです。Google・生成AI・校務DX・授業DXの実践をもとに、先生が明日から試せる研修と、企業の教育プログラムを学校現場に届く形へ磨く支援を行います。
+          現役小学校教員・GEG Chikuho共同リーダーの外崎顕博です。Google・生成AIの研修だけでなく、企業の教材や出前授業を、子どもと先生に届く形へ磨きます。
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="#referral">紹介してほしい方を見る</a>
-          <a class="button" href="#intro">紹介文を見る</a>
+          <a class="button primary" href="https://lin.ee/Tay8XPQ">公式LINEで相談する</a>
+          <a class="button light" href="#referral">紹介してほしい方を見る</a>
         </div>
-      </div>
-      <div class="hero-visual">
-        <img src="assets/hero-workshop.png" alt="教育DX研修をイメージしたワークショップテーブル">
-        <div class="visual-caption">
+        <div class="social-links" aria-label="外崎顕博の発信リンク">
+          <a class="social-link" href="https://note.com/tozaki_edu">noteの記事</a>
+          <a class="social-link" href="https://www.facebook.com/profile.php?id=100013297578450">Facebook</a>
+          <a class="social-link" href="https://x.com/Tozaki_edu">X</a>
+          <a class="social-link" href="https://edtech-chikuho.com/">EdTech Chikuho</a>
+        </div>
+        <div class="hero-proof">
           <div>
-            <strong>190名+</strong>
-            <span>GEG Chikuhoコミュニティ</span>
+            <strong>10年+</strong>
+            <span>小学校現場での実践</span>
+          </div>
+          <div>
+            <strong>190+</strong>
+            <span>GEG Chikuho</span>
           </div>
           <div>
             <strong>4.80/5</strong>
-            <span>研修満足度平均</span>
+            <span>研修満足度</span>
+          </div>
+          <div>
+            <strong>2027</strong>
+            <span>独立予定</span>
           </div>
         </div>
       </div>
@@ -658,6 +752,10 @@
           <p class="lead" style="margin-top:14px;">
             生成AIやGoogleツールは、導入しただけでは使われ続けません。大切なのは、先生の仕事、授業の流れ、子どもの反応、管理職の判断、学校の文化に合わせて組み立てることです。LiFE with は、ツール紹介ではなく、学校で使われる仕組みにする伴走を核にしています。
           </p>
+          <div class="pill-row" style="margin-top:18px;">
+            <a class="button" href="https://note.com/tozaki_edu">noteで実践記事を見る</a>
+            <a class="button" href="https://edtech-chikuho.com/">教材・実践サイトを見る</a>
+          </div>
         </div>
       </div>
     </section>
@@ -761,9 +859,9 @@
             </p>
           </div>
           <div class="card">
-            <h3>教材・ツール制作</h3>
+            <h3>記事・教材・ツール制作</h3>
             <p>
-              Google Apps Script、Googleサイト、生成AIを活用した教材・校務改善ツールを作成。座席表Webアプリ、Geminiを活用した学習分析、教材テンプレートなどを実践で検証しています。
+              Google Apps Script、Googleサイト、生成AIを活用した教材・校務改善ツールを作成。noteやEdTech Chikuhoで、座席表Webアプリ、Geminiを活用した学習分析、教材テンプレートなどの実践を発信しています。
             </p>
           </div>
           <div class="card">
@@ -772,6 +870,44 @@
               社会科×ICT、特別支援教育×ICTなどの共同研究や、地域企業・自治体・大学との連携経験があります。学校の中だけではなく、地域や企業と学びをつなぐことを重視しています。
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band-white" id="facebook-note">
+      <div class="inner">
+        <div class="section-head">
+          <div>
+            <div class="label">Articles / SNS</div>
+            <h2>日々の実践と思考を、外に出し続けています。</h2>
+          </div>
+          <p class="lead">
+            研修で話す内容は、現場で試し、記録し、周囲の先生とやり取りしながら磨いています。紹介前に人柄や考え方を確認したい方は、以下をご覧ください。
+          </p>
+        </div>
+        <div class="grid-3">
+          <article class="card accent-green">
+            <h3>note</h3>
+            <p>生成AI、授業づくり、教材制作、研修レポートなどを文章で整理しています。</p>
+            <div class="pill-row">
+              <a class="button" href="https://note.com/tozaki_edu">noteを開く</a>
+            </div>
+          </article>
+          <article class="card accent-blue">
+            <h3>Facebook</h3>
+            <p>教育イベント、GEGの活動、学校現場で見つけた実践のヒントを近況として共有しています。</p>
+            <div class="pill-row">
+              <a class="button" href="https://www.facebook.com/profile.php?id=100013297578450">Facebookを開く</a>
+            </div>
+          </article>
+          <article class="card accent-gold">
+            <h3>X / EdTech Chikuho</h3>
+            <p>リアルタイムの気づきはXに、教材・授業実践・ICT活用の記録はEdTech Chikuhoに蓄積しています。</p>
+            <div class="pill-row">
+              <a class="button" href="https://x.com/Tozaki_edu">Xを開く</a>
+              <a class="button" href="https://edtech-chikuho.com/">サイトを開く</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -857,12 +993,16 @@
           <div class="label" style="color:#a7f3d0;">Contact</div>
           <h2>学校向けの授業・教材・研修を、現場目線で見直したい方へ。</h2>
           <p>
-            まずは紹介者経由でおつなぎください。現在は2027年3月独立に向けた準備段階のため、勤務規程や時期に配慮しながら、可能な範囲で相談・情報交換を行います。
+            初回のご相談は公式LINEからお願いします。現在は2027年3月独立に向けた準備段階のため、勤務規程や時期に配慮しながら、可能な範囲で相談・情報交換を行います。
           </p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://lin.ee/Tay8XPQ">公式LINEを開く</a>
+            <a class="button light" href="https://note.com/tozaki_edu">noteを見る</a>
+          </div>
         </div>
         <div class="contact-card">
-          <strong>紹介時に添えてほしいこと</strong>
-          <span>相手の事業内容、学校との関わり方、今困っていること、教材や授業がすでにあるかどうかを教えていただけると、初回の話がスムーズです。</span>
+          <strong>公式LINEで送ってほしいこと</strong>
+          <span>相手の事業内容、学校との関わり方、今困っていること、教材や授業がすでにあるかどうかを送っていただけると、初回の話がスムーズです。</span>
         </div>
       </div>
     </section>

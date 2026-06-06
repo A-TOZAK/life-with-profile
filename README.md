@@ -14,6 +14,14 @@ BNIでの紹介、教育関係者・企業向けの初回共有に使うため�
 
 学校・自治体・企業の思いを、教室で使われる学びに変える。
 
+## 外部リンク
+
+- 公式LINE: https://lin.ee/Tay8XPQ
+- note: https://note.com/tozaki_edu
+- Facebook: https://www.facebook.com/profile.php?id=100013297578450
+- X: https://x.com/Tozaki_edu
+- EdTech Chikuho: https://edtech-chikuho.com/
+
 ## ファイル
 
 - `index.html`: 公開ページ
@@ -22,4 +30,3 @@ BNIでの紹介、教育関係者・企業向けの初回共有に使うため�
 ## GitHub Pages
 
 GitHub Pagesで公開する想定です。
-
